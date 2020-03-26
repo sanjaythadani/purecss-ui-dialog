@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>purecss-ui-dialog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/favicon.ico" asp-append-version="true">
+    <link href="css/lib.css" rel="stylesheet">
+
+    <script>
+        var theme = location.href.indexOf("theme=dark") != -1 ? "dark" : "default";
+
+        var linlinkTheme = document.createElement("link");
+        linlinkTheme.href = "css/purecss-ui-" + theme + ".css";
+        linlinkTheme.rel = "stylesheet";
+        linlinkTheme.type = "text/css";
+        document.getElementsByTagName("head")[0].appendChild(linlinkTheme);
+
+        var linkThemeDialog = document.createElement("link");
+        linkThemeDialog.href = "css/purecss-ui-dialog-" + theme + ".css";
+        linkThemeDialog.rel = "stylesheet";
+        linkThemeDialog.type = "text/css";
+        document.getElementsByTagName("head")[0].appendChild(linkThemeDialog);
+    </script>
+
+    <script src="js/lib.js"></script>
+    <script src="js/purecss-ui-dialog.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <div id="main-header" class="sticky-top">
+        <div class="pure-menu pure-menu-horizontal header-content">
+            <div class="menu-toggle mr-sm">
+                <button class="menu-toggle-button" data-target="">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="pure-g flex-align-center">
+                <div class="pure-u-md-1-24 pure-u-lg-2-24"></div>
+                <div class="pure-u-1 pure-u-md-22-24 pure-u-lg-20-24">
+                    <div class="mx-1">
+                        <div id="menu-container" class="pure-g flex-align-center">
+                            <div class="pure-u-20-24 pure-u-md-10-24">
+                                <div class="pure-menu-item brand flex-align-center">
+                                    <a href="/" class="no-decorator p-0">
+                                        <img src="images/pure-ui-logo.png" class="brand-logo" />
+                                        <span class="text-xl text-primary text-bold brand-title ml-sm">Pure.css UI Dialog</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="pure-u-4-24 pure-u-md-14-24 h-align-left">
+                                <ul class="pure-menu-list menu-collapse">
+                                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Default Theme</a></li>
+                                    <li class="pure-menu-item"><a href="?theme=dark" class="pure-menu-link">Dark Theme</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- body -->
+    <div class="main-content">
+        <div class="pure-g">
+            <div class="pure-u-md-1-24 pure-u-lg-2-24"></div>
+            <div class="pure-u-1 pure-u-md-22-24 pure-u-lg-20-24">
+
+                <div>
+                    <!-- dialogs -->
+                    <div class="mx-1">
+                        <h3>Dialogs</h3>
+                        <hr />
+                        <div class="pure-g">
+                            <div class="pure-u-1">
+                                <button class="pure-button button-default" onclick="showNonModalDialog()">Show non modal dialog</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer-content">
+        <div class="pure-g">
+            <div class="pure-u-md-1-24 pure-u-lg-2-24"></div>
+            <div class="pure-u-1 pure-u-md-11-24 pure-u-lg-10-24">
+                <div class="mx-1 text-information">
+                    <span>Content on this site licensed under the <a href="https://github.com/sanjaythadani/purecss-ui-dialog/blob/master/LICENSE" class="text-information">MIT License</a>.</span>
+                </div>
+            </div>
+            <div class="pure-u-1 pure-u-md-11-24 pure-u-lg-10-24 h-align-right">
+                <div class="mx-1 text-information">
+                    <a href="https://github.com/sanjaythadani/purecss-ui-dialog" class="text-information">GitHub Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.ready(function() {
+            pu.menu.init();
+
+            window.showNonModalDialog = function() {
+                pu.dialog.show({ title: 'Non Modal Dialog', message: 'This is a non modal dialog!' });
+            }
+        });
+    </script>
+</body>
+</html>

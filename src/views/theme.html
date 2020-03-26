@@ -1,0 +1,20 @@
+﻿<div>
+    <!-- dialogs -->
+    <div class="mx-1">
+        <h3>Dialogs</h3>
+        <hr />
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <button class="pure-button button-default" onclick="showNonModalDialog()">Show non modal dialog</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.ready(function() {
+            window.showNonModalDialog = function() {
+                pu.dialog.show({ title: 'Non Modal Dialog', message: 'This is a non modal dialog!' });
+            }
+        });
+    </script>
+</div>
